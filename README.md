@@ -61,9 +61,10 @@ versionati in root coincidano con il build, installa Chromium ed esegue i test
 browser su ogni PR e sui push a `main`. Dopo una modifica a template o asset,
 eseguire `npm run build` e `npm run sync:pages`, quindi includere gli output
 root nella modifica. Il test browser avvia e chiude un server locale, verifica
-quattro larghezze da 320 a 1440 px, navigazione da tastiera, redirect anche
-senza JavaScript, caricamento delle nove varianti dei font locali, newsletter
-in arrivo e blocco reale degli script inline e dei font esterni dalla CSP.
+quattro larghezze da 320 a 1440 px, assenza di overflow orizzontale, adattamento
+della copertina Superbonus, navigazione da tastiera, redirect anche senza
+JavaScript, caricamento delle nove varianti dei font locali, newsletter in
+arrivo e blocco reale degli script inline e dei font esterni dalla CSP.
 Per usare Chromium già presente, impostare `CHROME_PATH`; per screenshot,
 `QA_OUTPUT`. Le Actions sono fissate a commit; non esiste un workflow di deploy.
 In CI il controllo della cronologia riceve la base e la testa del cambiamento:

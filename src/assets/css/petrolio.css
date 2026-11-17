@@ -405,7 +405,7 @@ em { color: var(--color-text-muted); }
 .golfo-box .tappa-text {
     font-family: var(--font-ui);
     font-size: clamp(.82rem,1.9vw,.94rem);
-    color: var(--color-text-muted);
+    color: var(--color-charcoal-text);
 }
 .golfo-box .tappa-text strong { color: var(--color-gold); }
 
