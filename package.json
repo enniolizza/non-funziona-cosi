@@ -1,0 +1,17 @@
+{
+  "name": "nonfunzionacosi",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "eleventy",
+    "sync:pages": "python scripts/sync_pages.py",
+    "test:browser": "node tests/browser-smoke.cjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.8",
+    "playwright": "1.65.1"
+  }
+}

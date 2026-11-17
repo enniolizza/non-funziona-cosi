@@ -1,0 +1,23 @@
+<header class="site-header">
+    <div class="container">
+        <a class="site-logo" href="{{ relativeRoot }}pagine/home.html" aria-label="Non Funziona Così, Prima Pagina">
+            <img src="{{ relativeRoot }}assets/images/logo-nonfunzionacosi.webp" alt="" width="76" height="76" decoding="async">
+        </a>
+        <div class="site-brand">
+            {% if currentPage == "home" or currentPage == "manifesto" %}
+            <h1 class="site-title"><a href="{{ relativeRoot }}pagine/home.html">Non Funziona Così</a></h1>
+            {% else %}
+            <a class="site-title" href="{{ relativeRoot }}pagine/home.html">Non Funziona Così</a>
+            {% endif %}
+            <p class="tagline">La Verità oltre la Propaganda</p>
+        </div>
+    </div>
+</header>
+<nav class="site-nav" aria-label="Menu Principale">
+    <ul>
+        <li><a href="{{ relativeRoot }}pagine/home.html"{% if currentPage == "home" %} aria-current="page"{% endif %}>Prima Pagina</a></li>
+        <li><a href="{{ relativeRoot }}pagine/home.html#economia">Economia & Mercati</a></li>
+        <li><a href="{{ relativeRoot }}pagine/home.html#geopolitica">Geopolitica</a></li>
+        <li><a href="{{ relativeRoot }}pagine/chi_siamo.html"{% if currentPage == "manifesto" %} aria-current="page"{% endif %}>Il Nostro Manifesto</a></li>
+    </ul>
+</nav>
