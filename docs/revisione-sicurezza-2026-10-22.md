@@ -18,7 +18,7 @@ dal proprietario, non identificati nel repository, né certifica l'infrastruttur
 del fornitore.
 
 Base esaminata: commit `230281eb986a0659544debee95bcb40c0e187f0c`, 18 aprile 2026.
-Il sito pubblico risponde su `https://enniolizza.github.io/nonfunzionacosi/`.
+Il sito pubblico risponde su `https://enniolizza.github.io/non-funziona-cosi/`.
 La home ha restituito HTTP 200, riferimenti all'infrastruttura GitHub e
 `Strict-Transport-Security: max-age=31556952`. Nella risposta osservata non
 comparivano CSP, X-Frame-Options o X-Content-Type-Options.

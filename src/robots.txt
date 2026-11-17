@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://enniolizza.github.io/nonfunzionacosi/sitemap.xml
+Sitemap: https://enniolizza.github.io/non-funziona-cosi/sitemap.xml
