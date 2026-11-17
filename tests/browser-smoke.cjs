@@ -79,6 +79,15 @@ const server = http.createServer((req, res) => {
                         assert.ok(Math.abs(ratio - 16 / 9) < 0.02, `${route}: cover must be 16:9`);
                     }
                 }
+                if (route.includes('superbonus_110')) {
+                    const imageFits = await page.locator('.hero-image img').evaluate(image => {
+                        const frame = image.parentElement.getBoundingClientRect();
+                        const bounds = image.getBoundingClientRect();
+                        return Math.abs(bounds.width - frame.width) < 1 &&
+                            Math.abs(bounds.height - frame.height) < 1;
+                    });
+                    assert.equal(imageFits, true, `Superbonus cover image must fill its frame at ${width}px`);
+                }
                 if (route.startsWith('articoli/')) {
                     assert.equal(await page.getByRole('complementary', { name: 'Nota di archivio' }).isVisible(), true);
                     assert.equal(await page.locator('main .archive-notice').count(), 0, 'Archive notice must not alter original article text');

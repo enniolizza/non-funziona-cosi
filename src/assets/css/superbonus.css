@@ -129,7 +129,7 @@ a:hover { color: var(--color-gold); }
     margin: 35px 0;
 }
 .executive-box h4 {
-    color: var(--color-accent);
+    color: var(--color-accent-text);
     font-family: var(--font-display);
     font-size: 1.15rem;
     margin-bottom: 15px;
@@ -162,7 +162,7 @@ a:hover { color: var(--color-gold); }
     margin: 30px 0;
 }
 .alert-box h4 {
-    color: var(--color-accent);
+    color: var(--color-accent-text);
     margin-bottom: 10px;
     font-size: 1.05rem;
 }
@@ -175,7 +175,7 @@ a:hover { color: var(--color-gold); }
     margin: 30px 0;
 }
 .info-box h4 {
-    color: var(--color-success);
+    color: var(--color-success-text);
     margin-bottom: 8px;
 }
 
@@ -211,8 +211,8 @@ a:hover { color: var(--color-gold); }
 .data-table tr:hover td {
     background: rgba(255,255,255,0.02);
 }
-.val-negative { color: var(--color-accent); font-weight: 700; }
-.val-positive { color: var(--color-success); font-weight: 700; }
+.val-negative { color: var(--color-accent-text); font-weight: 700; }
+.val-positive { color: var(--color-success-text); font-weight: 700; }
 .val-gold { color: var(--color-gold); font-weight: 700; }
 
 .timeline {
@@ -296,7 +296,7 @@ a:hover { color: var(--color-gold); }
 .fraud-amount {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--color-accent);
+    color: var(--color-accent-text);
     margin-bottom: 8px;
 }
 .fraud-desc {
@@ -315,7 +315,7 @@ a:hover { color: var(--color-gold); }
 .big-number {
     font-size: 4rem;
     font-weight: 700;
-    color: var(--color-accent);
+    color: var(--color-accent-text);
     line-height: 1;
     margin-bottom: 10px;
     font-family: var(--font-ui);
@@ -328,7 +328,7 @@ a:hover { color: var(--color-gold); }
 }
 .big-number-source {
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.3);
+    color: #b7c0c8;
     margin-top: 10px;
 }
 
@@ -395,7 +395,6 @@ a:hover { color: var(--color-gold); }
     h2 { font-size: 1.5rem; }
     .meta { flex-direction: column; align-items: center; gap: 8px; }
     .big-number { font-size: 2.8rem; }
-    .hero-image img { height: 280px; }
     .fraud-grid { grid-template-columns: 1fr; }
     .timeline { padding-left: 30px; }
     .data-table { font-size: 0.85rem; }
