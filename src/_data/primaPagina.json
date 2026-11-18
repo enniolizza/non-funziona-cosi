@@ -1,0 +1,38 @@
+[
+  {
+    "id": "geopolitica",
+    "layout": "lead",
+    "url": "articoli/petrolio_wti/index_petrolio.html",
+    "symbol": "🛢️",
+    "cover": "articoli/petrolio_wti/images/anteprima-petrolio",
+    "category": "Geopolitica & Mercati",
+    "title": "Dossier: Crisi Petrolifera e Piano Mattei",
+    "excerpt": "Nel dossier del 15 aprile 2026: Brent al picco di $118, poi sui $95-97. Blocco CENTCOM ai porti iraniani, missione Meloni nel Golfo, analisi JP Morgan e Goldman Sachs. Dati e scenario riferiti a quella data.",
+    "action": "Leggi il Dossier →"
+  },
+  {
+    "id": "economia",
+    "layout": "secondary",
+    "url": "articoli/superbonus_110/index_superbonus.html",
+    "symbol": "💣",
+    "cover": "articoli/superbonus_110/images/anteprima-superbonus",
+    "category": "Economia & Conti Pubblici",
+    "title": "Superbonus 110%: La Voragine da 150 Miliardi",
+    "excerpt": "165 miliardi di crediti generati, solo 25 compensati. Corte dei Conti e Bankitalia parlano di «disastro annunciato». L'analisi completa con tutti i numeri, le frodi e le fonti.",
+    "action": "Leggi i Fatti →"
+  },
+  {
+    "layout": "brief",
+    "category": "Sicurezza Interna",
+    "title": "Legge e Ordine: I Veri Dati sulla Sicurezza Urbana",
+    "excerpt": "Un'analisi cruda e senza filtri sui reali e crescenti indici di criminalità all'interno delle città italiane. I numeri che i media tradizionali ignorano.",
+    "action": "In Arrivo →"
+  },
+  {
+    "layout": "brief",
+    "category": "Radici & Cultura",
+    "title": "Riscoprire le Virtù dell'Impero nella Società Moderna",
+    "excerpt": "Famiglia, tradizione, onore. Perché i valori del mondo classico sono oggi l'unico e vero baluardo contro il declino morale contemporaneo.",
+    "action": "In Arrivo →"
+  }
+]

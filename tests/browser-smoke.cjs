@@ -5,7 +5,7 @@ const http = require('node:http');
 const path = require('node:path');
 const { chromium } = require('playwright');
 const root = path.resolve(process.env.SITE_DIR || path.join(__dirname, '..', '_site'));
-const prefix = '/nonfunzionacosi/';
+const prefix = '/non-funziona-cosi/';
 const pages = ['pagine/home.html', 'pagine/chi_siamo.html',
     'articoli/petrolio_wti/index_petrolio.html', 'articoli/superbonus_110/index_superbonus.html'];
 const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.woff2': 'font/woff2' };
@@ -164,7 +164,12 @@ const server = http.createServer((req, res) => {
         await staticPage.waitForURL(base + 'pagine/home.html');
         assert.equal(await staticPage.locator('.banner-slide:visible').count(), 3);
         assert.equal(await staticPage.locator('.banner-dots:visible').count(), 0);
-        assert.equal(await staticPage.locator('main a[href*="index_petrolio"]').count(), 3);
+        const cards = staticPage.locator('.news-grid article');
+        assert.deepEqual(await cards.evaluateAll(items => items.map(card => card.querySelectorAll('a').length)),
+            [1, 1, 0, 0], 'Each published story has one link and upcoming stories have none');
+        await cards.first().getByRole('link').focus();
+        await staticPage.keyboard.press('Enter');
+        await staticPage.waitForURL(base + pages[2]);
         await noJS.close();
         console.log(`PASS: ${checks} page/viewport combinations; 9 local font variants, redirect, keyboard carousel, no-JS fallback, newsletter and browser CSP enforcement.`);
     } finally {

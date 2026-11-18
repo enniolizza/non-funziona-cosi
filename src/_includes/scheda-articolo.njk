@@ -1,0 +1,14 @@
+<article class="article-card article-card--{{ scheda.layout }}"{% if scheda.id %} id="{{ scheda.id }}"{% endif %}>
+    {% if scheda.cover %}
+    <img class="article-image" src="{{ relativeRoot }}{{ scheda.cover }}-800.webp"
+         srcset="{{ relativeRoot }}{{ scheda.cover }}-480.webp 480w, {{ relativeRoot }}{{ scheda.cover }}-800.webp 800w, {{ relativeRoot }}{{ scheda.cover }}-1024.webp 1024w"
+         sizes="(max-width: 40rem) calc(100vw - 2.5rem), {% if scheda.layout == 'lead' %}(max-width: 76.25rem) 60vw, 700px{% else %}(max-width: 76.25rem) 40vw, 450px{% endif %}"
+         width="800" height="450" alt="" {% if scheda.layout == 'lead' %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+    {% endif %}
+    <div class="article-content">
+        <span class="article-category">{{ scheda.category | escape }}</span>
+        <h3 class="article-title">{% if scheda.url %}<a class="article-link" href="{{ relativeRoot }}{{ scheda.url }}"><span class="headline-symbol" aria-hidden="true">{{ scheda.symbol }}</span> {{ scheda.title | escape }}</a>{% else %}{{ scheda.title | escape }}{% endif %}</h3>
+        <p class="article-excerpt">{{ scheda.excerpt | escape }}</p>
+        <span class="read-more"{% if scheda.url %} aria-hidden="true"{% endif %}>{{ scheda.action | escape }}</span>
+    </div>
+</article>
