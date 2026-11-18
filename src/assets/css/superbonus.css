@@ -51,13 +51,8 @@ body {
     letter-spacing: 1.5px;
     display: inline-block;
     margin-bottom: 18px;
-    animation: pulse-badge 2s ease-in-out infinite;
 }
 
-@keyframes pulse-badge {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(var(--color-accent-rgb), 0.4); }
-    50% { box-shadow: 0 0 0 8px rgba(var(--color-accent-rgb), 0); }
-}
 
 h1 {
     font-family: var(--font-reading);
@@ -109,16 +104,16 @@ h3 {
     letter-spacing: 0.5px;
 }
 
-p { margin-bottom: 20px; }
+:where(article) p { margin-bottom: 20px; }
 
-ul, ol {
+:where(article) :is(ul, ol) {
     margin-bottom: 20px;
     padding-left: 25px;
 }
-li { margin-bottom: 12px; }
+:where(article) li { margin-bottom: 12px; }
 
-a { color: var(--color-gold); }
-a:hover { color: var(--color-gold); }
+:where(article) a { color: var(--color-gold); }
+:where(article) a:hover { color: var(--color-gold); }
 
 .executive-box {
     background: linear-gradient(135deg, rgba(var(--color-accent-rgb),0.15) 0%, rgba(var(--color-accent-rgb),0.08) 100%);
@@ -128,7 +123,10 @@ a:hover { color: var(--color-gold); }
     border-radius: 0 10px 10px 0;
     margin: 35px 0;
 }
-.executive-box h4 {
+.executive-box h2 {
+    border: 0;
+    margin-top: 0;
+    padding: 0;
     color: var(--color-accent-text);
     font-family: var(--font-display);
     font-size: 1.15rem;
@@ -161,7 +159,8 @@ a:hover { color: var(--color-gold); }
     border-radius: 0 8px 8px 0;
     margin: 30px 0;
 }
-.alert-box h4 {
+.alert-box h3 {
+    margin-top: 0;
     color: var(--color-accent-text);
     margin-bottom: 10px;
     font-size: 1.05rem;
@@ -174,7 +173,8 @@ a:hover { color: var(--color-gold); }
     border-radius: 0 8px 8px 0;
     margin: 30px 0;
 }
-.info-box h4 {
+.info-box h3 {
+    margin-top: 0;
     color: var(--color-success-text);
     margin-bottom: 8px;
 }
@@ -339,7 +339,7 @@ a:hover { color: var(--color-gold); }
     border-radius: 8px;
     border: 1px solid var(--color-border);
 }
-.sources h3 {
+.sources h2 {
     margin-top: 0;
 }
 .source-list {
@@ -367,7 +367,7 @@ a:hover { color: var(--color-gold); }
     transition: color 0.3s;
     word-break: break-all;
 }
-.source-list a:hover { color: var(--color-gold); }
+.source-list :where(article) a:hover { color: var(--color-gold); }
 
 .editor-note {
     background: rgba(var(--color-gold-rgb), 0.08);
@@ -417,13 +417,13 @@ a:hover { color: var(--color-gold); }
     .subtitle { font-size: 0.95rem; }
     .meta { font-size: 0.8rem; padding: 10px 0; gap: 6px; }
     .content { font-size: 0.98rem; }
-    p { margin-bottom: 16px; }
+    :where(article) p { margin-bottom: 16px; }
     .executive-box { padding: 16px 12px; }
-    .executive-box h4 { font-size: 1rem; }
+    .executive-box h2 { font-size: 1rem; }
     .executive-box li { font-size: 0.88rem; gap: 8px; }
     .exec-icon { font-size: 1rem; }
     .alert-box, .info-box { padding: 14px 14px; }
-    .alert-box h4, .info-box h4 { font-size: 0.95rem; }
+    .alert-box h3, .info-box h3 { font-size: 0.95rem; }
     .big-number { font-size: 2.2rem; }
     .big-number-label { font-size: 0.95rem; }
     .big-number-section { padding: 30px 12px; margin: 25px 0; }

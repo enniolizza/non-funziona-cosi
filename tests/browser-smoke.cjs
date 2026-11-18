@@ -37,7 +37,7 @@ const server = http.createServer((req, res) => {
     if (output) fs.mkdirSync(output, { recursive: true });
     let checks = 0;
     try {
-        for (const width of [320, 390, 768, 1440]) {
+        for (const width of [320, 390, 768, 1024, 1440]) {
             for (const route of pages) {
                 const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: 'reduce' });
                 const errors = [];
@@ -64,6 +64,12 @@ const server = http.createServer((req, res) => {
                         .map(image => image.currentSrc || image.src);
                 });
                 assert.deepEqual(brokenImages, [], `${route} at ${width}: broken images`);
+                const navLinks = page.locator('.site-nav a');
+                assert.equal(await navLinks.evaluateAll(links => links.every(link => {
+                    const box = link.getBoundingClientRect();
+                    return box.left >= 0 && box.right <= innerWidth && box.height >= 44;
+                })), true, `${route} at ${width}: all menu items should fit and have a 44px target`);
+                assert.equal(await page.getByRole('heading', { level: 1 }).count(), 1);
                 assert.equal(await page.locator('main').count(), 1);
                 assert.equal(await page.locator('main').isVisible(), true);
                 assert.equal(await page.locator('.site-header').count(), 1, `${route}: shared masthead missing`);
@@ -121,6 +127,17 @@ const server = http.createServer((req, res) => {
         const page = await browser.newPage();
         await page.goto(base);
         await page.waitForURL(base + 'pagine/home.html');
+        await page.keyboard.press('Tab');
+        assert.equal(await page.locator('.skip-link').evaluate(link => link === document.activeElement), true);
+        await page.keyboard.press('Enter');
+        assert.equal(await page.locator('main').evaluate(main => main === document.activeElement), true);
+        const lead = page.locator('.article-card--lead');
+        const leadImage = lead.locator('img');
+        await leadImage.scrollIntoViewIfNeeded();
+        const leadTarget = await lead.locator('a').getAttribute('href');
+        await leadImage.click({ force: true });
+        await page.waitForURL(new URL(leadTarget, base + pages[0]).href);
+        await page.goto(base + pages[0]);
         await page.locator('[data-slide="1"]').click();
         assert.equal(await page.locator('.banner-slide:not([hidden]) h2').textContent(), 'Giornalismo Senza Filtri');
         await page.locator('[data-slide="1"]').press('ArrowRight');

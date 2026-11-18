@@ -12,7 +12,9 @@ versionate ai percorsi pubblici correnti.
 | `src/pagine/` | Template della prima pagina e del manifesto |
 | `src/articoli/` | Template, fonti e immagini degli articoli |
 | `src/_includes/` | Parziali condivisi per testata, navigazione e footer |
-| `src/assets/css/shared.css` | Token semantici, font locali, testata, footer, accessibilità |
+| `src/_data/primaPagina.json` | Titoli, sommari e destinazioni delle schede in home |
+| `src/assets/css/tokens.css` | Palette, famiglie di caratteri, spazi e misure editoriali |
+| `src/assets/css/shared.css` | Font locali, testata, navigazione, footer e accessibilità |
 | `src/assets/fonts/` | Cinzel, Playfair Display, Inter in WOFF2, licenze OFL e provenienza |
 | `src/assets/css/` | Fogli di stile condivisi e specifici delle pagine |
 | `src/assets/js/carousel.js` | Navigazione manuale e accessibile dei banner |
@@ -21,7 +23,7 @@ versionate ai percorsi pubblici correnti.
 | `scripts/check_site.py` | Verifiche offline senza dipendenze esterne |
 | `scripts/check_history.py` | Blocca gli asset rimossi in `HEAD` e nei commit entranti rispetto alla base |
 | `tests/content-baseline.json` | Impronte del contenuto originale e collegamenti preservati |
-| `tests/browser-smoke.cjs` | Smoke test Playwright su quattro viewport |
+| `tests/browser-smoke.cjs` | Smoke test Playwright su cinque viewport |
 | `docs/revisione-sicurezza-2026-10-22.md` | Analisi, fonti, limiti e interventi amministrativi |
 
 ## Anteprima locale
@@ -61,7 +63,7 @@ versionati in root coincidano con il build, installa Chromium ed esegue i test
 browser su ogni PR e sui push a `main`. Dopo una modifica a template o asset,
 eseguire `npm run build` e `npm run sync:pages`, quindi includere gli output
 root nella modifica. Il test browser avvia e chiude un server locale, verifica
-quattro larghezze da 320 a 1440 px, assenza di overflow orizzontale, adattamento
+cinque larghezze da 320 a 1440 px, assenza di overflow orizzontale, adattamento
 della copertina Superbonus, navigazione da tastiera, redirect anche senza
 JavaScript, caricamento delle nove varianti dei font locali, newsletter in
 arrivo e blocco reale degli script inline e dei font esterni dalla CSP.
@@ -121,10 +123,9 @@ Riferimenti: [tecniche](https://refactoring.guru/refactoring/techniques),
 
 ## Rilascio e ripristino
 
-Esaminare la pull request e i controlli prima di integrare in `main`.
+Prima di pubblicare direttamente su `main`, conservare un riferimento al punto di partenza e completare i controlli locali. Dopo il push, verificare l’esito di `Site checks` e della pubblicazione Pages.
 GitHub Pages serve direttamente i file versionati in root dal branch `main`;
 `Site checks` impedisce che gli output pubblici divergano dai template.
 Dopo il rilascio verificare home, manifesto, dossier e header HTTP dal sito
 pubblico; le prove locali non attestano la configurazione remota.
-Per annullare, creare una PR che esegua il revert del commit integrato:
-non cancellare la cronologia e non eseguire un force push su `main`.
+Per annullare un intervento, usare un nuovo commit di revert su `main`.

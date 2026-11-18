@@ -19,7 +19,7 @@ body {
     padding: 6px 20px;
     text-transform: uppercase;
 }
-.live-strip .brent-val { color: var(--color-gold); }
+.live-strip .brent-val { color: var(--color-text-inverse); }
 
 main { padding: 30px 16px 0; }
 
@@ -96,7 +96,7 @@ h1 {
     gap: 20px;
     flex-wrap: wrap;
 }
-.date-strip span { color: var(--color-gold); font-weight: 600; }
+.date-strip :is(time, span) { color: var(--color-gold); font-weight: 600; }
 
 .content-body {
     padding: clamp(22px,5vw,54px) clamp(16px,6vw,62px);
@@ -133,14 +133,14 @@ h3 {
     text-transform: uppercase;
     letter-spacing: .5px;
 }
-p {
+:where(.dossier-wrapper) p {
     margin-bottom: 20px;
     font-size: clamp(.98rem, 2.3vw, 1.13rem);
     color: var(--color-charcoal);
     text-align: left;
 }
-strong { color: var(--color-surface-dark); font-weight: 700; }
-em { color: var(--color-text-muted); }
+:where(.dossier-wrapper) strong { color: var(--color-surface-dark); font-weight: 700; }
+:where(.dossier-wrapper) em { color: var(--color-text-muted); }
 
 .highlight-data {
     color: var(--color-accent);
@@ -192,7 +192,8 @@ em { color: var(--color-text-muted); }
     margin: 28px 0;
     border-radius: 0 4px 4px 0;
 }
-.nota-verifica h4 {
+.nota-verifica :is(h3, h4) {
+    margin-top: 0;
     font-family: var(--font-ui);
     font-size: .75rem;
     font-weight: 700;
@@ -230,7 +231,9 @@ em { color: var(--color-text-muted); }
     letter-spacing: .5px;
 }
 
+.table-responsive { max-width: 100%; overflow-x: auto; }
 .analyst-table {
+    min-width: 34rem;
     width: 100%;
     border-collapse: collapse;
     margin: 28px 0;
@@ -253,9 +256,9 @@ em { color: var(--color-text-muted); }
     color: var(--color-charcoal);
     vertical-align: top;
 }
-.analyst-table tr:nth-child(even) td { background: var(--color-surface-raised); }
-.analyst-table .up   { color: var(--color-danger-strong); font-weight: 700; }
-.analyst-table .down { color: var(--color-success-strong); font-weight: 700; }
+.analyst-table :where(tr:nth-child(even)) td { background: var(--color-surface-raised); }
+.analyst-table .up { color: var(--color-danger); background: var(--color-danger-surface); font-weight: 700; }
+.analyst-table .down { color: var(--color-success-text); background: var(--color-success-surface); font-weight: 700; }
 
 .confronto-wrapper {
     background: var(--color-surface-dark);
@@ -296,6 +299,7 @@ em { color: var(--color-text-muted); }
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(var(--color-gold-rgb),.35);
 }
+.confronto-card em { color: inherit; }
 .confronto-card.iraniano h3 { color: var(--color-danger-soft); }
 .confronto-card.americano h3 { color: var(--color-success-soft); }
 .confronto-card ul {
@@ -344,6 +348,7 @@ em { color: var(--color-text-muted); }
     margin-top: 0;
 }
 .debunk-section p { color: var(--color-charcoal-text); }
+.debunk-section .fonte { color: var(--color-gold); border-color: currentColor; }
 .debunk-section p strong { color: var(--color-gold); }
 .debunk-section p em { color: var(--color-text-inverse); }
 
@@ -368,8 +373,8 @@ em { color: var(--color-text-muted); }
     margin-bottom: 22px;
     border-radius: 4px;
 }
-.debunk-box.fake h4 { color: var(--color-danger-soft); font-family: var(--font-ui); font-size: clamp(.9rem,2.2vw,1.05rem); margin-bottom: 8px; }
-.debunk-box.real h4 { color: var(--color-success-soft); font-family: var(--font-ui); font-size: clamp(.9rem,2.2vw,1.05rem); margin-bottom: 8px; }
+.debunk-box.fake h3 { color: var(--color-danger-soft); font-family: var(--font-ui); font-size: clamp(.9rem,2.2vw,1.05rem); margin-bottom: 8px; }
+.debunk-box.real h3 { color: var(--color-success-soft); font-family: var(--font-ui); font-size: clamp(.9rem,2.2vw,1.05rem); margin-bottom: 8px; }
 .debunk-box p { font-family: var(--font-reading); margin-bottom:0; text-align:left; font-size: clamp(.95rem,2.2vw,1.08rem); }
 
 .golfo-box {
@@ -425,7 +430,6 @@ ul.dossier-list li::marker {
 
 @media (max-width: 768px) {
     .date-strip { font-size: .72rem; gap: 12px; }
-    .analyst-table { display: block; overflow-x: auto; }
 }
 @media (max-width: 600px) {
     .dossier-hero { aspect-ratio: auto; min-height: 320px; }
