@@ -28,13 +28,13 @@
 
 <header class="site-header">
     <div class="container">
-        <a class="site-logo" href="../../pagine/home.html" aria-label="Non Funziona Così, Prima Pagina">
-            <img src="../../assets/images/logo-nonfunzionacosi.webp" alt="" width="76" height="76" decoding="async">
+        <a class="site-brand-link" href="../../pagine/home.html">
+            <img class="site-logo" src="../../assets/images/logo-nonfunzionacosi.webp" alt="" width="56" height="56" decoding="async">
+            <div class="site-brand">
+                <p class="site-title">Non Funziona Così</p>
+                <p class="tagline">La Verità oltre la Propaganda</p>
+            </div>
         </a>
-        <div class="site-brand">
-            <a class="site-title" href="../../pagine/home.html">Non Funziona Così</a>
-            <p class="tagline">La Verità oltre la Propaganda</p>
-        </div>
     </div>
 </header>
 <nav class="site-nav" aria-label="Menu Principale">
@@ -47,24 +47,24 @@
 </nav>
 
     <aside class="archive-notice" aria-label="Nota di archivio">
-        <strong>Articolo d'archivio · aprile 2026.</strong>
+        <strong>Articolo d'archivio · <time datetime="2026-04">aprile 2026.</time></strong>
         Testo, dati e fonti conservano il contesto dell'epoca e non rappresentano un aggiornamento della situazione attuale.
     </aside>
 
-    <div class="hero-image">
-        <img src="images/hero_superbonus.webp" alt="Illustrazione del disastro finanziario del Superbonus 110%" width="1024" height="1024" loading="lazy" decoding="async">
-        <div class="hero-overlay"></div>
-    </div>
+    <main id="main-content" tabindex="-1">
+        <div class="hero-image">
+            <img src="images/hero_superbonus.webp" alt="Illustrazione del disastro finanziario del Superbonus 110%" width="1024" height="1024" fetchpriority="high" decoding="async">
+            <div class="hero-overlay"></div>
+        </div>
 
-    <main id="main-content" class="container">
-        <article>
+        <article class="container">
             <div class="article-header animate-in">
                 <span class="badge">Inchiesta — Conti Pubblici</span>
                 <h1>💣 Superbonus 110%: La Voragine da 150 Miliardi che Pagheranno i Vostri Figli</h1>
                 <p class="subtitle">165 miliardi di crediti generati. Solo 25 compensati. Corte dei Conti e Bankitalia parlano di «disastro annunciato». Ecco tutti i numeri, le frodi e le responsabilità.</p>
 
                 <div class="meta">
-                    <span><strong>Data:</strong> 8 Aprile 2026</span>
+                    <span><strong>Data:</strong> <time datetime="2026-04-08">8 Aprile 2026</time></span>
                     <span><strong>Categoria:</strong> Economia & Conti Pubblici</span>
                     <span><strong>Lettura:</strong> 8 min</span>
                 </div>
@@ -79,7 +79,7 @@
 
                 <!-- EXECUTIVE SUMMARY -->
                 <div class="executive-box">
-                    <h4>📋 Executive Summary</h4>
+                    <h2>📋 Executive Summary</h2>
                     <ul>
                         <li><span class="exec-icon">💰</span> <strong>165 miliardi €</strong> di crediti fiscali generati (135 mld Superbonus + 30 mld bonus facciate)</li>
                         <li><span class="exec-icon">🏦</span> Solo <strong>~25 miliardi €</strong> effettivamente compensati alla cassa dello Stato</li>
@@ -104,7 +104,7 @@
                 <p>Con il <strong>Dl Semplificazioni</strong> (luglio 2021) furono ammesse più categorie di interventi e beneficiari, inclusa l'eliminazione delle barriere architettoniche<sup>[8]</sup>. Le leggi di bilancio 2022-2023 hanno fissato nuove scadenze e limiti — per esempio, fine 2023 per condomìni e IACP, aliquota ridotta al 90% per le famiglie nel 2023<sup>[9]</sup>.</p>
 
                 <div class="alert-box">
-                    <h4>⚠️ Il Problema Strutturale</h4>
+                    <h3>⚠️ Il Problema Strutturale</h3>
                     <p>La normativa ha spinto l'edilizia, ma con massimali di spesa troppo generosi e vincoli di reddito insufficienti, consentendo anche acquisizioni speculative — villini di lusso, castelli storici — che non erano l'obiettivo originario della misura.</p>
                 </div>
 
@@ -133,19 +133,19 @@
                 </div>
 
                 <!-- DATI ECONOMICI -->
-                <h2>📊 I Dati Economici: La Realtà dei Numeri</h2>
+                <h2 id="dati-economici">📊 I Dati Economici: La Realtà dei Numeri</h2>
                 <p>L'impatto macroeconomico del Superbonus è complesso. Da un lato ha contribuito a un balzo dei consumi nelle costruzioni: l'ISTAT ha rivisto la crescita del PIL 2021 a <strong>+8,3%</strong> (da +7%), grazie anche alla ripresa post-Covid e agli incentivi edilizi<sup>[4]</sup>.</p>
 
                 <p>Tuttavia questo effetto positivo è stato quasi totalmente <strong>«cannibalizzato»</strong> dai costi del bonus: l'ISTAT stesso conferma che il deficit/PIL 2021-2022 è rimasto intorno al -8%<sup>[3]</sup>. In pratica, il +8,3% di PIL è derivato in parte dal Superbonus, ma il maggior deficit generato ha neutralizzato ogni beneficio.</p>
 
                 <!-- TABELLA DATI -->
-                <div class="table-responsive">
+                <div class="table-responsive" role="region" aria-labelledby="dati-economici" tabindex="0">
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th>Indicatore</th>
-                            <th>Valore</th>
-                            <th>Fonte</th>
+                            <th scope="col">Indicatore</th>
+                            <th scope="col">Valore</th>
+                            <th scope="col">Fonte</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -204,7 +204,7 @@
                 </div>
 
                 <div class="info-box">
-                    <h4>📌 Il Dato Chiave di Bankitalia</h4>
+                    <h3>📌 Il Dato Chiave di Bankitalia</h3>
                     <p>Secondo Banca d'Italia, <strong>circa un quarto degli investimenti</strong> incentivati dal Superbonus sarebbero stati fatti comunque anche senza il bonus — una «perdita secca» di <strong>45 miliardi di euro</strong> di risorse pubbliche sprecate<sup>[7]</sup>.</p>
                 </div>
 
@@ -233,7 +233,7 @@
                 </div>
 
                 <div class="alert-box">
-                    <h4>⚖️ La Cassazione Ha Deciso</h4>
+                    <h3>⚖️ La Cassazione Ha Deciso</h3>
                     <p>Con sentenza del 2026, la <strong>Corte di Cassazione</strong> ha definitivamente chiarito che creare un credito Superbonus fittizio costituisce <strong>truffa aggravata</strong><sup>[12]</sup>. Non più zona grigia: è reato grave, con pene severe per i responsabili.</p>
                 </div>
 
@@ -258,7 +258,7 @@
 
                 <!-- FONTI -->
                 <div class="sources">
-                    <h3>📚 Fonti e Riferimenti</h3>
+                    <h2>📚 Fonti e Riferimenti</h2>
                     <p class="sources-intro">Documenti ufficiali (ISTAT, Corte dei Conti, MEF, Banca d'Italia) e inchieste giornalistiche verificate (Sky TG24, ANSA, Corriere della Sera, Repubblica).</p>
                     <ol class="source-list">
                         <li><a href="https://tg24.sky.it/economia/2024/02/14/superbonus-110-costo" target="_blank" rel="noopener noreferrer">Superbonus 110%, il costo sui conti pubblici è stato di 135 miliardi — Sky TG24</a></li>

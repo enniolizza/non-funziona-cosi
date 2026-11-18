@@ -33,20 +33,20 @@ permalink: /articoli/petrolio_wti/index_petrolio.html
 {% include "masthead.njk" %}
 
 <aside class="archive-notice" aria-label="Nota di archivio">
-    <strong>Articolo d'archivio · 15 aprile 2026.</strong>
+    <strong>Articolo d'archivio · <time datetime="2026-04-15">15 aprile 2026.</time></strong>
     Prezzi, dati e scenario geopolitico si riferiscono a quella data. Il testo originale è conservato; le quotazioni non sono aggiornate in tempo reale.
 </aside>
 
 <!-- ===== HISTORICAL DATA STRIP ===== -->
-<div class="live-strip">
+<aside class="live-strip" aria-label="Dati storici sul petrolio">
     DATI AL 15 APRILE 2026 &nbsp;|&nbsp;
     Brent: <span class="brent-val">~$95–97/bbl</span> &nbsp;|&nbsp;
     WTI: <span class="brent-val">~$91/bbl</span> &nbsp;|&nbsp;
     Blocco navale CENTCOM porti iraniani: <span class="brent-val">ATTIVO A QUELLA DATA</span>
-</div>
+</aside>
 
 <!-- ===== MAIN ===== -->
-<main id="main-content">
+<main id="main-content" tabindex="-1">
 <article class="dossier-wrapper">
 
     <!-- HERO -->
@@ -60,8 +60,8 @@ permalink: /articoli/petrolio_wti/index_petrolio.html
 
     <!-- DATE STRIP -->
     <div class="date-strip">
-        Pubblicazione: <span>15 Aprile 2026</span>
-        &nbsp;·&nbsp; Ultimo aggiornamento dati: <span>15 Aprile 2026, ore 12:00</span>
+        Pubblicazione: <time datetime="2026-04-15">15 Aprile 2026</time>
+        &nbsp;·&nbsp; Ultimo aggiornamento dati: <time datetime="2026-04-15T12:00">15 Aprile 2026, ore 12:00</time>
         &nbsp;·&nbsp; Fonti principali: <span>EIA, IEA, Goldman Sachs, JP Morgan, CENTCOM, Governo.it</span>
     </div>
 
@@ -80,7 +80,7 @@ permalink: /articoli/petrolio_wti/index_petrolio.html
         <p>Il giorno successivo, il Comando Centrale degli Stati Uniti (<strong>CENTCOM</strong>) ha avviato il blocco navale dei porti iraniani, entrato in vigore il <span class="highlight-data">13 aprile 2026 alle 10:00 ET</span>. Per implementarlo la US Navy ha dispiegato due Carrier Strike Group — <strong>USS Gerald R. Ford CSG</strong> e <strong>USS Abraham Lincoln CSG</strong> — affiancati da cacciatorpedinieri e unità per lo sminamento. <a href="https://www.centcom.mil/MEDIA/PRESS-RELEASES/Press-Release-View/Article/4457255/us-to-blockade-ships-entering-or-exiting-iranian-ports/" class="fonte" target="_blank" rel="noopener noreferrer">CENTCOM.mil</a></p>
 
         <div class="nota-verifica">
-            <h4>📌 Precisazione tecnica sul perimetro del blocco</h4>
+            <h3>📌 Precisazione tecnica sul perimetro del blocco</h3>
             <p>Il CENTCOM ha chiarito ufficialmente che le forze USA <em>"will not impede freedom of navigation for vessels transiting the Strait of Hormuz to and from non-Iranian ports."</em> Il blocco colpisce esclusivamente navi dirette verso o provenienti da <strong>porti iraniani</strong>, non tutto il traffico dello Stretto. Una distinzione legale rilevante, ma che non cambia la sostanza: lo Stretto rimane de facto ostruito dalle mine iraniane e dall'instabilità bellica. <a href="https://www.euronews.com/2026/04/13/us-blockade-of-iranian-ports-come-into-effect-as-trump-threatens-to-destroy-attack-ships" class="fonte" target="_blank" rel="noopener noreferrer">Euronews, 13 apr.</a></p>
         </div>
 
@@ -90,77 +90,79 @@ permalink: /articoli/petrolio_wti/index_petrolio.html
         </figure>
 
         <!-- SEZIONE 2: NUMERI EIA -->
-        <h3>Lo Shock dell'Offerta: Dati Ufficiali EIA al 15 Aprile 2026</h3>
+        <h3 id="dati-eia">Lo Shock dell'Offerta: Dati Ufficiali EIA al 15 Aprile 2026</h3>
 
         <p>L'<strong>EIA (U.S. Energy Information Administration)</strong> certifica nel suo rapporto trimestrale Q1 2026 un rialzo dei prezzi senza precedenti dal 1988 in termini reali: <a href="https://www.eia.gov/todayinenergy/detail.php?id=67424" class="fonte" target="_blank" rel="noopener noreferrer">EIA Q1 Review</a></p>
 
-        <table class="analyst-table">
-            <thead>
-                <tr>
-                    <th>Data / Periodo</th>
-                    <th>Brent ($/bbl)</th>
-                    <th>WTI ($/bbl)</th>
-                    <th>Note</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Inizio 2026</td>
-                    <td>$61</td>
-                    <td>~$57</td>
-                    <td>Pre-conflitto — proiezioni di surplus</td>
-                </tr>
-                <tr>
-                    <td>28 feb. 2026</td>
-                    <td>~$72</td>
-                    <td>~$68</td>
-                    <td>Giorno degli attacchi USA-Israele su Iran</td>
-                </tr>
-                <tr>
-                    <td>9 mar. 2026</td>
-                    <td class="up">$94</td>
-                    <td class="up">~$88</td>
-                    <td>Data chiusura STEO EIA di marzo — +50% YTD</td>
-                </tr>
-                <tr>
-                    <td>31 mar. 2026</td>
-                    <td class="up">$118</td>
-                    <td>—</td>
-                    <td>Fine Q1 — rialzo trimestrale record dal 1988</td>
-                </tr>
-                <tr>
-                    <td><strong>Inizio apr. 2026</strong></td>
-                    <td class="up"><strong>~$118 (picco)</strong></td>
-                    <td class="up">~$106</td>
-                    <td><strong>Massimo assoluto dei futures nella crisi</strong> — prezzi fisici spot più elevati (EIA April STEO)</td>
-                </tr>
-                <tr>
-                    <td>7 apr. 2026</td>
-                    <td>$109</td>
-                    <td>$112</td>
-                    <td>Ultimatum Trump a Teheran per Hormuz</td>
-                </tr>
-                <tr>
-                    <td>13 apr. 2026</td>
-                    <td>~$103</td>
-                    <td>~$99</td>
-                    <td>Rimbalzo +8% post-annuncio blocco CENTCOM</td>
-                </tr>
-                <tr>
-                    <td><strong>15 apr. 2026 (oggi)</strong></td>
-                    <td class="down"><strong>~$95–97</strong></td>
-                    <td class="down"><strong>~$91</strong></td>
-                    <td><strong>Calo su speranze nuovi negoziati USA-Iran</strong></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive" role="region" aria-labelledby="dati-eia" tabindex="0">
+            <table class="analyst-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Data / Periodo</th>
+                        <th scope="col">Brent ($/bbl)</th>
+                        <th scope="col">WTI ($/bbl)</th>
+                        <th scope="col">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Inizio 2026</td>
+                        <td>$61</td>
+                        <td>~$57</td>
+                        <td>Pre-conflitto — proiezioni di surplus</td>
+                    </tr>
+                    <tr>
+                        <td>28 feb. 2026</td>
+                        <td>~$72</td>
+                        <td>~$68</td>
+                        <td>Giorno degli attacchi USA-Israele su Iran</td>
+                    </tr>
+                    <tr>
+                        <td>9 mar. 2026</td>
+                        <td class="up">$94</td>
+                        <td class="up">~$88</td>
+                        <td>Data chiusura STEO EIA di marzo — +50% YTD</td>
+                    </tr>
+                    <tr>
+                        <td>31 mar. 2026</td>
+                        <td class="up">$118</td>
+                        <td>—</td>
+                        <td>Fine Q1 — rialzo trimestrale record dal 1988</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Inizio apr. 2026</strong></td>
+                        <td class="up"><strong>~$118 (picco)</strong></td>
+                        <td class="up">~$106</td>
+                        <td><strong>Massimo assoluto dei futures nella crisi</strong> — prezzi fisici spot più elevati (EIA April STEO)</td>
+                    </tr>
+                    <tr>
+                        <td>7 apr. 2026</td>
+                        <td>$109</td>
+                        <td>$112</td>
+                        <td>Ultimatum Trump a Teheran per Hormuz</td>
+                    </tr>
+                    <tr>
+                        <td>13 apr. 2026</td>
+                        <td>~$103</td>
+                        <td>~$99</td>
+                        <td>Rimbalzo +8% post-annuncio blocco CENTCOM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>15 apr. 2026 (oggi)</strong></td>
+                        <td class="down"><strong>~$95–97</strong></td>
+                        <td class="down"><strong>~$91</strong></td>
+                        <td><strong>Calo su speranze nuovi negoziati USA-Iran</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <p>Attualmente il Brent tratta intorno ai <span class="highlight-data">$95–97/barile</span>, con il WTI a circa <span class="highlight-data">$91</span>. Il calo rispetto al picco riflette l'ottimismo del mercato sulla possibilità che i negoziati riprendano entro i prossimi giorni prima della scadenza del cessate il fuoco del 22 aprile. L'IEA ha avvertito che questo rimbalzo potrebbe essere prematuro: la chiusura prolungata dello Stretto minaccia di annullare la crescita globale della domanda petrolifera — sarebbe il primo calo annuale dal 2020. <a href="https://tradingeconomics.com/commodity/brent-crude-oil" class="fonte" target="_blank" rel="noopener noreferrer">TradingEconomics, 15 apr.</a> <a href="https://www.cnbc.com/2026/04/14/oil-wti-brent-as-markets-hormuz-blockade-vance-trump.html" class="fonte" target="_blank" rel="noopener noreferrer">CNBC, 14 apr.</a></p>
 
         <p>Sul fronte della produzione, l'EIA April STEO stima che Iraq, Arabia Saudita, Kuwait, EAU, Qatar e Bahrein abbiano collettivamente ridotto la produzione di <span class="highlight-data">7,5 milioni di barili/giorno a marzo</span>, con una proiezione di <span class="highlight-data">9,1 milioni b/g in aprile</span>. <a href="https://www.eia.gov/outlooks/steo/" class="fonte" target="_blank" rel="noopener noreferrer">EIA STEO Apr. 2026</a></p>
 
         <!-- SEZIONE 3: ANALISTI JP MORGAN E GOLDMAN -->
-        <h2>📊 Cosa Dicono i Grandi Banche: JP Morgan e Goldman Sachs</h2>
+        <h2 id="previsioni-banche">📊 Cosa Dicono i Grandi Banche: JP Morgan e Goldman Sachs</h2>
 
         <p>Il consenso delle maggiori istituzioni finanziarie globali è unanime nell'identificare questa come la crisi di offerta petrolifera più grave nella storia del mercato moderno.</p>
 
@@ -178,44 +180,46 @@ permalink: /articoli/petrolio_wti/index_petrolio.html
 
         <p><strong>JP Morgan</strong> ha emesso il warning più aggressivo: la banca newyorkese avverte che uno scenario di chiusura prolungata fino a metà maggio trasformerebbe l'attuale shock regionale nel più grande shock energetico della storia moderna, con ricadute sistemiche su inflazione, tassi e mercati finanziari globali. Solo un mese fa, la stessa JP Morgan prevedeva il Brent in recupero al range dei $60 entro fine 2026.</p>
 
-        <table class="analyst-table">
-            <thead>
-                <tr>
-                    <th>Istituzione</th>
-                    <th>Scenario base 2026</th>
-                    <th>Scenario avverso</th>
-                    <th>Previsione Q4 2026</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Goldman Sachs</strong></td>
-                    <td>$85/bbl media annua</td>
-                    <td class="up">$135/bbl (6 mesi chiusura)</td>
-                    <td>$71/bbl (base) — $93 (risk)</td>
-                </tr>
-                <tr>
-                    <td><strong>JP Morgan</strong></td>
-                    <td>Altamente volatile</td>
-                    <td class="up">$150/bbl (chiusura a metà mag.)</td>
-                    <td>N/D</td>
-                </tr>
-                <tr>
-                    <td><strong>EIA (Governo USA)</strong></td>
-                    <td>$103 media marzo</td>
-                    <td class="up">$115/bbl picco Q2</td>
-                    <td class="down">~$70 (normaliz. fine 2026)</td>
-                </tr>
-                <tr>
-                    <td><strong>Wood Mackenzie</strong></td>
-                    <td>$90+/bbl = recessione USA/UE</td>
-                    <td class="up">$200/bbl = recessione globale</td>
-                    <td>N/D</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive" role="region" aria-labelledby="previsioni-banche" tabindex="0">
+            <table class="analyst-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Istituzione</th>
+                        <th scope="col">Scenario base 2026</th>
+                        <th scope="col">Scenario avverso</th>
+                        <th scope="col">Previsione Q4 2026</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Goldman Sachs</strong></td>
+                        <td>$85/bbl media annua</td>
+                        <td class="up">$135/bbl (6 mesi chiusura)</td>
+                        <td>$71/bbl (base) — $93 (risk)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>JP Morgan</strong></td>
+                        <td>Altamente volatile</td>
+                        <td class="up">$150/bbl (chiusura a metà mag.)</td>
+                        <td>N/D</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EIA (Governo USA)</strong></td>
+                        <td>$103 media marzo</td>
+                        <td class="up">$115/bbl picco Q2</td>
+                        <td class="down">~$70 (normaliz. fine 2026)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wood Mackenzie</strong></td>
+                        <td>$90+/bbl = recessione USA/UE</td>
+                        <td class="up">$200/bbl = recessione globale</td>
+                        <td>N/D</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <p>Va sottolineato che tutte le previsioni "ottimiste" (Brent < $80 a fine anno) assumono una riapertura dello Stretto nelle prossime settimane. Con la situazione attuale — blocco CENTCOM attivo, cessate il fuoco in scadenza il 22 aprile, negoziati in stand-by — tale scenario rimane incerto.</p>
+        <p>Va sottolineato che tutte le previsioni "ottimiste" (Brent &lt; $80 a fine anno) assumono una riapertura dello Stretto nelle prossime settimane. Con la situazione attuale — blocco CENTCOM attivo, cessate il fuoco in scadenza il 22 aprile, negoziati in stand-by — tale scenario rimane incerto.</p>
 
         <!-- SEZIONE 4: CAOS VS CONTROLLO -->
         <div class="confronto-wrapper">
@@ -303,12 +307,12 @@ permalink: /articoli/petrolio_wti/index_petrolio.html
                     <p>Il petrolio che vediamo "scendere" in borsa non è la benzina che entra nella nostra automobile domani mattina. Le dinamiche istantanee del greggio devono scontrarsi con i tempi logistici insopprimibili della filiera: contratti di compravendita con anticipo di settimane, raffinazione, trasporto su gomma. Ecco la verità fattuale sui due falsi miti più diffusi.</p>
 
                     <div class="debunk-box fake">
-                        <h4>❌ FALSO MITO 1: "I prezzi salgono subito, ma scendono piano. È la prova della speculazione."</h4>
+                        <h3>❌ FALSO MITO 1: "I prezzi salgono subito, ma scendono piano. È la prova della speculazione."</h3>
                         <p><strong>La Realtà Economica:</strong> In macroeconomia questo fenomeno è codificato come <em>trasmissione asimmetrica dei prezzi</em> ("razzi e piume"). Il listino alla pompa non riflette la cisterna nel piazzale oggi, bensì il <strong>costo di rimpiazzo futuro</strong>. Se il Brent esplode, il distributore deve adeguare subito i prezzi — altrimenti non incasserà abbastanza per pagare il successivo carico al prezzo di mercato, rischiando il fallimento. Al contrario, all'abbassamento del greggio le riduzioni tardano: il gestore deve prima smaltire carburante già acquistato settimane prima ai prezzi massimi.</p>
                     </div>
 
                     <div class="debunk-box fake">
-                        <h4>❌ FALSO MITO 2: "È solo ingordigia e speculazione dell'intera filiera."</h4>
+                        <h3>❌ FALSO MITO 2: "È solo ingordigia e speculazione dell'intera filiera."</h3>
                         <p><strong>La Realtà Economica:</strong> Lo sfasamento temporale è logistico-finanziario, non speculativo. Se i prezzi alla pompa fossero guidati da arbitrio puro, sarebbero slegati dalle borse. Invece i listini replicano metodicamente le fluttuazioni globali con la sola inerzia fisica della filiera reale rispetto ai tempi virtuali di Wall Street. In tutto questo pesa la base fissa delle accise — che in Italia rimane tra le più alte d'Europa indipendentemente da qualsiasi crisi.</p>
                     </div>
                 </div>
@@ -319,7 +323,7 @@ permalink: /articoli/petrolio_wti/index_petrolio.html
             </div>
 
             <div class="section-spaced debunk-box real">
-                <h4>✅ LA RISPOSTA CONCRETA DELLO STATO: Il Governo Stanzia Quasi 1 Miliardo sulle Accise</h4>
+                <h3>✅ LA RISPOSTA CONCRETA DELLO STATO: Il Governo Stanzia Quasi 1 Miliardo sulle Accise</h3>
                 <p><strong>Dati Verificati:</strong> Il Governo Meloni ha stanziato finora quasi <strong>1 miliardo di euro</strong> per la riduzione delle accise sui carburanti, nel tentativo di attutire l'impatto del rialzo del greggio su famiglie e imprese. Il Decreto Carburanti, in sinergia tra <strong>MIMIT</strong> e <strong>MEF</strong>, mantiene attivo il monitoraggio del Garante dei Prezzi. Le verifiche della <strong>Guardia di Finanza</strong> su migliaia di impianti stradali e autostradali hanno prodotto denunce per frode in commercio, contestazioni per mancata trasparenza sul portale 'Osservaprezzi' ed espulsioni temporanee di licenze. <a href="https://www.ilpost.it/2026/04/04/giorgia-meloni-visita-golfo-persico-arabia-saudita/" class="fonte" target="_blank" rel="noopener noreferrer">Il Post, 4 apr. 2026</a></p>
             </div>
         </div>
