@@ -24,7 +24,7 @@ body {
 main { padding: 30px 16px 0; }
 
 .dossier-wrapper {
-    max-width: 960px;
+    max-width: 1040px;
     margin: 0 auto;
     background-color: var(--color-surface);
     border-top: 6px solid var(--color-accent);
@@ -430,6 +430,11 @@ ul.dossier-list li::marker {
 
 @media (max-width: 768px) {
     .date-strip { font-size: .72rem; gap: 12px; }
+}
+@media (min-width: 769px) {
+    main { padding-inline: 24px; }
+    .content-body { padding-inline: clamp(42px, 5vw, 62px); }
+    .pdf-figure { width: 100%; }
 }
 @media (max-width: 600px) {
     .dossier-hero { aspect-ratio: auto; min-height: 320px; }
