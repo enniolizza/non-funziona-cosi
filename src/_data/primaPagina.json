@@ -1,6 +1,5 @@
 [
   {
-    "id": "geopolitica",
     "layout": "lead",
     "url": "articoli/petrolio_wti/index_petrolio.html",
     "symbol": "🛢️",
@@ -11,7 +10,6 @@
     "action": "Leggi il Dossier →"
   },
   {
-    "id": "economia",
     "layout": "secondary",
     "url": "articoli/superbonus_110/index_superbonus.html",
     "symbol": "💣",

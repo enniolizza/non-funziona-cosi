@@ -74,6 +74,46 @@ const server = http.createServer((req, res) => {
                 assert.equal(await page.locator('main').isVisible(), true);
                 assert.equal(await page.locator('.site-header').count(), 1, `${route}: shared masthead missing`);
                 assert.equal(await page.locator('.site-nav').count(), 1, `${route}: shared navigation missing`);
+                const navText = await page.locator('.site-nav a').allTextContents();
+                assert.equal(navText.includes('Articoli'), true, `${route}: Articoli navigation link missing`);
+                assert.equal(navText.includes('Economia & Mercati'), false, `${route}: obsolete Economia link remains`);
+                assert.equal(navText.includes('Geopolitica'), false, `${route}: obsolete Geopolitica link remains`);
+                if (route === 'pagine/home.html') {
+                    const tickerCheck = await page.evaluate(() => {
+                        const ticker = document.querySelector('[data-ticker], .news-ticker');
+                        const label = ticker?.querySelector('[data-ticker-label], .ticker-label');
+                        const title = ticker?.querySelector('[data-ticker-title], .ticker-content');
+                        if (!ticker || !label || !title) return { found: false };
+                        const tRect = ticker.getBoundingClientRect();
+                        const lRect = label.getBoundingClientRect();
+                        const textRect = title.getBoundingClientRect();
+                        const tolerance = 1;
+                        const overlaps = !(lRect.right <= textRect.left + tolerance ||
+                            lRect.left >= textRect.right - tolerance ||
+                            lRect.bottom <= textRect.top + tolerance ||
+                            lRect.top >= textRect.bottom - tolerance);
+                        const overflowsContainer = textRect.right > tRect.right + tolerance ||
+                            textRect.left < tRect.left - tolerance ||
+                            lRect.right > tRect.right + tolerance;
+                        return {
+                            found: true,
+                            visible: lRect.width > 0 && lRect.height > 0 && textRect.width > 0 && textRect.height > 0,
+                            overlaps,
+                            overflowsContainer,
+                            lRect: { left: lRect.left, right: lRect.right, top: lRect.top, bottom: lRect.bottom },
+                            textRect: { left: textRect.left, right: textRect.right, top: textRect.top, bottom: textRect.bottom }
+                        };
+                    });
+                    if (!tickerCheck.found || !tickerCheck.visible) {
+                        throw new Error(`Ticker non trovato o non visibile a ${width}px`);
+                    }
+                    if (tickerCheck.overlaps) {
+                        throw new Error(`Sovrapposizione rilevata nel ticker a ${width}px: label=${JSON.stringify(tickerCheck.lRect)} vs title=${JSON.stringify(tickerCheck.textRect)}`);
+                    }
+                    if (tickerCheck.overflowsContainer) {
+                        throw new Error(`Overflow orizzontale del ticker rispetto al contenitore a ${width}px`);
+                    }
+                }
                 if (width >= 768) {
                     const cover = route.includes('petrolio_wti') ? '.dossier-hero' :
                         route.includes('superbonus_110') ? '.hero-image' : null;
@@ -131,6 +171,13 @@ const server = http.createServer((req, res) => {
         assert.equal(await page.locator('.skip-link').evaluate(link => link === document.activeElement), true);
         await page.keyboard.press('Enter');
         assert.equal(await page.locator('main').evaluate(main => main === document.activeElement), true);
+        await page.getByRole('link', { name: 'Articoli', exact: true }).click();
+        await page.waitForFunction(() => location.hash === '#articoli');
+        assert.equal(await page.locator('#articoli').isVisible(), true);
+        await page.goto(base + pages[2]);
+        await page.getByRole('link', { name: 'Articoli', exact: true }).click();
+        await page.waitForURL(url => url.pathname.endsWith('/pagine/home.html') && url.hash === '#articoli');
+        assert.equal(await page.locator('#articoli').isVisible(), true);
         const lead = page.locator('.article-card--lead');
         const leadImage = lead.locator('img');
         await leadImage.scrollIntoViewIfNeeded();
