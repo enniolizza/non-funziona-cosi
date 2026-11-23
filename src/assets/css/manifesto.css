@@ -27,6 +27,12 @@ main { padding: 56px 0; }
 .comparison-negative { list-style-type: '❌ '; }
 .comparison-positive { list-style-type: '📊 '; }
 .comparison-item { margin-bottom: 12px; }
+@media (min-width: 64rem) {
+    .hero { padding-block: 72px; }
+    main { padding-block: 64px; }
+    .virtue-grid { margin-block: 44px 64px; }
+    .method-section { padding: 44px 48px; }
+}
 @media (max-width: 640px) {
     .hero { padding: 44px 24px; }
     .hero p { font-size: 1.1rem; }
